@@ -1,0 +1,14 @@
+.gradle
+.idea
+.classpath
+.project
+.settings
+.yardoc
+.yardopts
+bin
+build
+target
+*.class
+.checkstyle
+
+
