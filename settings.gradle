@@ -1,4 +1,4 @@
 
-include 'hmi', 'hmi:jetty'
+include 'hmi:hmijetty'
 
 rootProject.name = 'mehar'
