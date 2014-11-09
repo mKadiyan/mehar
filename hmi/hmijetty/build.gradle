@@ -1,5 +1,3 @@
-apply plugin: 'jetty'
-
 dependencies {
 	compile "org.eclipse.jetty:jetty-server:$jetty9Version"
 	compile "org.eclipse.jetty:jetty-servlet:$jetty9Version"

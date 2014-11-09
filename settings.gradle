@@ -1,4 +1,4 @@
 
-include 'hmi:hmijetty'
+include 'hmi:hmijetty','hmi:uiserver'
 
 rootProject.name = 'mehar'
