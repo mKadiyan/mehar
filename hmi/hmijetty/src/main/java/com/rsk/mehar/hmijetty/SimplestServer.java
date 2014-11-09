@@ -17,6 +17,12 @@ public class SimplestServer
     
     public static void main(String[] args) throws Exception
     {
+        SimplestServer simplestServer = new SimplestServer();
+        simplestServer.startServer();
+    }
+    
+    public void startServer() throws Exception
+    {
         if (LOGGER.isInfoEnabled())
             LOGGER.info("Starting server");
         Server server = new Server(8080);
@@ -27,5 +33,6 @@ public class SimplestServer
         if (LOGGER.isInfoEnabled())
             LOGGER.info("Server started");
         server.join();
+        
     }
 }
