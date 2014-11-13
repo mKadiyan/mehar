@@ -13,11 +13,13 @@ import org.eclipse.jetty.server.handler.AbstractHandler;
 
 public class HelloHandler extends AbstractHandler
 {
+    static int index = 0;
     private static final Logger LOGGER = Logger.getLogger(HelloHandler.class);
     
     public void handle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response)
         throws IOException, ServletException
     {
+        System.err.println("index is : " + index++);
         if (LOGGER.isInfoEnabled())
         {
             LogSF.info(LOGGER, "Request came :target = {} , baseRequest={} ,request={}", target, baseRequest, request);
