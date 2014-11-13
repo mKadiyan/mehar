@@ -1,3 +1,4 @@
+apply plugin: 'application'
 dependencies {
 	compile "org.eclipse.jetty:jetty-server:$jetty9Version"
 	compile "org.eclipse.jetty:jetty-servlet:$jetty9Version"
@@ -6,4 +7,13 @@ dependencies {
 	compile "org.eclipse.jetty:jetty-jsp:$jetty9Version"
 	compile "javax.servlet:jstl:1.2"
 	//compile "javax.servlet:servlet-api:2.5"
+}
+
+task startUi(type: JavaExec, dependsOn:[classes]) {
+	main = 'com.rsk.mehar.jetty.SimpleServer'
+	classpath = sourceSets.main.runtimeClasspath
+}
+
+task start() << {
+		startUi.execute()
 }

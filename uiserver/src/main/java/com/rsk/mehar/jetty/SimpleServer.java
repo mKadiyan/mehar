@@ -1,23 +1,15 @@
 package com.rsk.mehar.jetty;
 
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.jetty.server.Server;
 
-public class SimplestServer
+public class SimpleServer
 {
-    private static final Logger LOGGER = Logger.getLogger(SimplestServer.class);
-    
-    static
-    {
-        BasicConfigurator.configure();
-        Logger.getRootLogger().setLevel(Level.INFO);
-    }
+    private static final Logger LOGGER = Logger.getLogger(SimpleServer.class);
     
     public static void main(String[] args) throws Exception
     {
-        SimplestServer simplestServer = new SimplestServer();
+        SimpleServer simplestServer = new SimpleServer();
         simplestServer.startServer();
     }
     
