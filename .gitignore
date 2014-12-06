@@ -10,5 +10,6 @@ build
 target
 *.class
 .checkstyle
+.metadata
 
 
