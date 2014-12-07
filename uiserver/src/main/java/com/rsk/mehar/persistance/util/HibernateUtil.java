@@ -1,7 +1,9 @@
 package com.rsk.mehar.persistance.util;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
 
 public class HibernateUtil
 {
@@ -10,24 +12,26 @@ public class HibernateUtil
     {
         try
         {
-            sessionFactory = new Configuration().configure()
-                .buildSessionFactory();
+            Configuration configuration = new Configuration().configure();
+            ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).configure()
+                .build();
+            sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+            
         }
         catch (Throwable ex)
         {
+            System.out.println(ex);
             throw new ExceptionInInitializerError(ex);
         }
     }
     
     public static SessionFactory getSessionFactory()
     {
-        // Alternatively, you could look up in JNDI here
         return sessionFactory;
     }
     
     public static void shutdown()
     {
-        // Close caches and connection pools
         getSessionFactory().close();
     }
 }

@@ -4,16 +4,15 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.rsk.mehar.persistance.pojo">
 	<class name="User" table="USER">
-	<meta attribute="class-description">
-         This class contains the employee detail. 
-      </meta>
-      <property name="firstName" column="first_name" type="string"/>
-      <property name="lastName" column="last_name" type="string"/>
-      <property name="email" column="email" type="string" not-null="true" unique="true"/>
-      <!-- sex true for male ,false for female -->
-      <property name="sex" column="sex" type="boolean"/>
-      <property name="dob" column="dob" type="date"/>
-      <property name="doj" column="doj" type="date"/>
-      
+		<meta attribute="class-description">
+			This class contains the user cardential details.
+		</meta>
+		<id name="email" column="EMAIL" type="string" />
+		<property name="firstName" column="FIRST_NAME" type="string" />
+		<property name="lastName" column="LAST_NAME" type="string" />
+
+		<!-- sex true for male ,false for female -->
+		<property name="dob" column="DOB" type="date" />
+		<property name="doj" column="DOJ" type="date" />
 	</class>
 </hibernate-mapping>
