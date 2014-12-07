@@ -11,7 +11,9 @@
 		<property name="firstName" column="FIRST_NAME" type="string" />
 		<property name="lastName" column="LAST_NAME" type="string" />
 
-		<!-- sex true for male ,false for female -->
+		
+		<property name="enabled" column="ENABLED" type="boolean" />
+		<property name="admin" column="ADMIN" type="boolean" />
 		<property name="dob" column="DOB" type="date" />
 		<property name="doj" column="DOJ" type="date" />
 	</class>

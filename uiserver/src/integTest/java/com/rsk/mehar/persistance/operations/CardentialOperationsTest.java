@@ -47,8 +47,8 @@ public class CardentialOperationsTest
     public void storeCardential_cardentialShouldGetStored() throws DuplicateUserException, InvalidUserException
     {
         String emailId = "test@gmail.com";
-        cardentialOperations.storeCardentials(emailId, "password");
         tempUsers.add(emailId);
+        cardentialOperations.storeCardentials(emailId, "password");
         assertTrue(cardentialOperations.isUserExist("test@gmail.com"));
     }
     
@@ -71,12 +71,12 @@ public class CardentialOperationsTest
     @Test
     public void deleteCardential_cardentialShouldGetDeleted() throws DuplicateUserException, InvalidUserException
     {
-        String emailId = "test@gmail.com";
+        String emailId = "delete@gmail.com";
         cardentialOperations.storeCardentials(emailId, "password");
-        assertTrue(cardentialOperations.isUserExist("test@gmail.com"));
+        assertTrue(cardentialOperations.isUserExist(emailId));
         
         cardentialOperations.deleteCardentials(emailId);
-        assertFalse(cardentialOperations.isUserExist("test@gmail.com"));
+        assertFalse(cardentialOperations.isUserExist(emailId));
         
     }
     
