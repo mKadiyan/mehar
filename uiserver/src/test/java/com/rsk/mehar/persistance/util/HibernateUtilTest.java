@@ -29,7 +29,7 @@ public class HibernateUtilTest
     public void setup()
     {
         BasicConfigurator.configure();
-        Logger.getRootLogger().setLevel(Level.DEBUG);
+        Logger.getRootLogger().setLevel(Level.INFO);
     }
     
     @Test
