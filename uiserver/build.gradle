@@ -12,12 +12,3 @@ dependencies {
 	compile "mysql:mysql-connector-java:5.1.6"
 	//compile "javax.servlet:servlet-api:2.5"
 }
-
-task startUi(type: JavaExec, dependsOn:[classes]) {
-	main = 'com.rsk.mehar.jetty.SimpleServer'
-	classpath = sourceSets.main.runtimeClasspath
-}
-
-task start() << {
-		startUi.execute()
-}
