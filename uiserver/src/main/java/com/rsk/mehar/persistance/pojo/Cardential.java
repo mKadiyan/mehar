@@ -16,6 +16,13 @@ public class Cardential
     private Date lastChange;
     private Date expiryDate;
     
+    @Override
+    public String toString()
+    {
+        return "Cardential [email=" + email + ", password=" + password + ", dateOfCreation=" + dateOfCreation + ", lastChange="
+            + lastChange + ", expiryDate=" + expiryDate + "]";
+    }
+    
     public Cardential(String email, String password, Date dateOfCreation, Date lastChange, Date expiryDate)
     {
         this.email = email;
@@ -23,6 +30,11 @@ public class Cardential
         this.dateOfCreation = dateOfCreation;
         this.lastChange = lastChange;
         this.expiryDate = expiryDate;
+    }
+    
+    public Cardential()
+    {
+        // TODO Auto-generated constructor stub
     }
     
     public String getEmail()
