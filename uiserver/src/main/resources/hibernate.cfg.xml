@@ -12,6 +12,6 @@
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		<!-- List of XML mapping files -->
-		<mapping resource="com/core/pojo/message.hbm.xml" />
+		<mapping resource="com/core/pojo/user.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>
