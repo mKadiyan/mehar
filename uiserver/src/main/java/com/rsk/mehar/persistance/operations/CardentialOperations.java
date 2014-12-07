@@ -6,8 +6,6 @@
 
 package com.rsk.mehar.persistance.operations;
 
-import java.util.Calendar;
-
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -36,7 +34,7 @@ public class CardentialOperations
         {
             if (!checkIfUserExist(session, emailId))
             {
-                Cardential cardential = new Cardential(emailId, password, Calendar.getInstance().getTime(), null, null);
+                Cardential cardential = new Cardential(emailId, password, null, null);
                 session.save(cardential);
                 session.getTransaction().commit();
             }

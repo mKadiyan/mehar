@@ -12,22 +12,13 @@ public class Cardential
 {
     private String email;
     private String password;
-    private Date dateOfCreation;
     private Date lastChange;
     private Date expiryDate;
     
-    @Override
-    public String toString()
-    {
-        return "Cardential [email=" + email + ", password=" + password + ", dateOfCreation=" + dateOfCreation + ", lastChange="
-            + lastChange + ", expiryDate=" + expiryDate + "]";
-    }
-    
-    public Cardential(String email, String password, Date dateOfCreation, Date lastChange, Date expiryDate)
+    public Cardential(String email, String password, Date lastChange, Date expiryDate)
     {
         this.email = email;
         this.password = password;
-        this.dateOfCreation = dateOfCreation;
         this.lastChange = lastChange;
         this.expiryDate = expiryDate;
     }
@@ -55,16 +46,6 @@ public class Cardential
     public void setPassword(String password)
     {
         this.password = password;
-    }
-    
-    public Date getDateOfCreation()
-    {
-        return dateOfCreation;
-    }
-    
-    public void setDateOfCreation(Date dateOfCreation)
-    {
-        this.dateOfCreation = dateOfCreation;
     }
     
     public Date getLastChange()
