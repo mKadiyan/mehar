@@ -19,3 +19,12 @@ body{
     font-size  : 24px;
     padding-right: 2%;
 }
+
+.navigation input{
+    color: gray ;
+    font-size  : 16px;
+    text-align: center;
+    -webkit-border-radius: 7px 7px 7px 0px;
+    border-radius: 7px 7px 7px 0px;
+
+}
