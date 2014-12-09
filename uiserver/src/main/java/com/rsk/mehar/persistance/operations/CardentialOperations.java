@@ -74,9 +74,27 @@ public class CardentialOperations
         return true;
     }
     
-    public void checkCardentials(String emailId, String password) throws InvalidUserException, InvalidCardentialException
+    public boolean isValidCardentials(String emailId, String password) throws InvalidUserException, InvalidCardentialException
     {
-        
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        try
+        {
+            if (!checkIfUserExist(session, emailId))
+                throw new InvalidUserException("User doesnt Exist : " + emailId);
+            
+            Query q = session.createQuery("select count(*) from Cardential where email = :emailId AND password = :password");
+            q.setParameter("emailId", emailId);
+            q.setParameter("password", password);
+            Long uniqueResult = (Long) q.uniqueResult();
+            if (uniqueResult != null && uniqueResult > 0l)
+                return true;
+        }
+        finally
+        {
+            session.close();
+        }
+        return false;
     }
     
     public void deleteCardentials(String emailId) throws InvalidUserException

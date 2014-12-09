@@ -22,6 +22,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.rsk.mehar.persistance.exception.DuplicateUserException;
+import com.rsk.mehar.persistance.exception.InvalidCardentialException;
 import com.rsk.mehar.persistance.exception.InvalidUserException;
 import com.rsk.mehar.persistance.util.HibernateUtil;
 
@@ -50,6 +51,30 @@ public class CardentialOperationsTest
         tempUsers.add(emailId);
         cardentialOperations.storeCardentials(emailId, "password");
         assertTrue(cardentialOperations.isUserExist("test@gmail.com"));
+    }
+    
+    @Test
+    public void checkValidCardential_cardentialShouldExist() throws DuplicateUserException, InvalidUserException,
+        InvalidCardentialException
+    {
+        String emailId = "test@gmail.com";
+        String password = "password";
+        tempUsers.add(emailId);
+        cardentialOperations.storeCardentials(emailId, password);
+        assertTrue(cardentialOperations.isValidCardentials(emailId, password));
+    }
+    
+    @Test
+    public void checkInValidPassword_shouldReturnFalse() throws DuplicateUserException, InvalidUserException,
+        InvalidCardentialException
+    {
+        String emailId = "test@gmail.com";
+        String password = "password";
+        String wrongPassword = "1234567";
+        tempUsers.add(emailId);
+        cardentialOperations.storeCardentials(emailId, password);
+        assertTrue(cardentialOperations.isValidCardentials(emailId, password));
+        assertFalse(cardentialOperations.isValidCardentials(emailId, wrongPassword));
     }
     
     @Test(expected = DuplicateUserException.class)
@@ -100,3 +125,4 @@ public class CardentialOperationsTest
 /*
  * Copyright (c) Mehar 2014 ALL RIGHTS RESERVED
  */
+
