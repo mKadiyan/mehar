@@ -6,6 +6,7 @@
 
 package com.rsk.mehar.persistance.operations;
 
+import org.apache.log4j.LogSF;
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -83,17 +84,22 @@ public class CardentialOperations
             if (!checkIfUserExist(session, emailId))
                 throw new InvalidUserException("User doesnt Exist : " + emailId);
             
-            Query q = session.createQuery("select count(*) from Cardential where email = :emailId AND password = :password");
-            q.setParameter("emailId", emailId);
-            q.setParameter("password", password);
-            Long uniqueResult = (Long) q.uniqueResult();
-            if (uniqueResult != null && uniqueResult > 0l)
-                return true;
+            return checkCardential(session, emailId, password);
         }
         finally
         {
             session.close();
         }
+    }
+    
+    private boolean checkCardential(Session session, String emailId, String password)
+    {
+        Query q = session.createQuery("select count(*) from Cardential where email = :emailId AND password = :password");
+        q.setParameter("emailId", emailId);
+        q.setParameter("password", password);
+        Long uniqueResult = (Long) q.uniqueResult();
+        if (uniqueResult != null && uniqueResult > 0l)
+            return true;
         return false;
     }
     
@@ -125,11 +131,33 @@ public class CardentialOperations
     public void changePassword(String emailId, String oldPassword, String newPassword) throws InvalidUserException,
         InvalidCardentialException
     {
-        
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        try
+        {
+            if (checkCardential(session, emailId, oldPassword))
+            {
+                String hql = "update Cardential set password = :newPassword where email = :email";
+                Query query = session.createQuery(hql);
+                query.setParameter("newPassword", newPassword);
+                query.setParameter("email", emailId);
+                int rowCount = query.executeUpdate();
+                if (logger.isInfoEnabled())
+                {
+                    LogSF.info(logger, "changePassword for :{} , Rows affected: {}", emailId, rowCount);
+                }
+            }
+            
+        }
+        finally
+        {
+            session.getTransaction().commit();
+            session.close();
+        }
     }
-    
 }
 
 /*
  * Copyright (c) Mehar 2014 ALL RIGHTS RESERVED
  */
+

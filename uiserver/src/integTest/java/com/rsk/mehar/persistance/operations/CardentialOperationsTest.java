@@ -64,6 +64,18 @@ public class CardentialOperationsTest
     }
     
     @Test
+    public void changePassword_passwordShouldGetChanged() throws DuplicateUserException, InvalidUserException,
+        InvalidCardentialException
+    {
+        String newPassword = "_newpassword";
+        tempUsers.add(emailId);
+        cardentialOperations.storeCardentials(emailId, password);
+        cardentialOperations.changePassword(emailId, password, newPassword);
+        assertTrue(cardentialOperations.isValidCardentials(emailId, newPassword));
+        assertFalse(cardentialOperations.isValidCardentials(emailId, password));
+    }
+    
+    @Test
     public void checkInValidPassword_shouldReturnFalse() throws DuplicateUserException, InvalidUserException,
         InvalidCardentialException
     {
