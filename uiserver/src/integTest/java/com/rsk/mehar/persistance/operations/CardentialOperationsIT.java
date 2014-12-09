@@ -9,16 +9,8 @@ package com.rsk.mehar.persistance.operations;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.rsk.mehar.persistance.exception.DuplicateUserException;
@@ -26,19 +18,10 @@ import com.rsk.mehar.persistance.exception.InvalidCardentialException;
 import com.rsk.mehar.persistance.exception.InvalidUserException;
 import com.rsk.mehar.persistance.util.HibernateUtil;
 
-public class CardentialOperationsTest
+public class CardentialOperationsIT extends TestBase
 {
     private CardentialOperations cardentialOperations;
-    private List<String> tempUsers = new ArrayList<String>();
-    private final String emailId = "_test@gmail.com";
     private final String password = "password";
-    
-    @BeforeClass
-    public static void init()
-    {
-        BasicConfigurator.configure();
-        Logger.getRootLogger().setLevel(Level.INFO);
-    }
     
     @Before
     public void setUp() throws Exception
@@ -120,12 +103,6 @@ public class CardentialOperationsTest
         {
             cardentialOperations.deleteCardentials(emailId);
         }
-    }
-    
-    @AfterClass
-    public static void shutdown()
-    {
-        HibernateUtil.shutdown();
     }
     
 }
