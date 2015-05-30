@@ -12,5 +12,6 @@ target
 .checkstyle
 .metadata
 *.log*
+*.iml
 
 
