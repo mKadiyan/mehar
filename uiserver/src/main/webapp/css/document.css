@@ -1,7 +1,7 @@
 body{
     font-family: Droid+Serif,sans-serif;
 }
-.navigation{
+.headerpane{
     background: #7cb8ff;
     width: 100%;
     height: 10%;
@@ -9,14 +9,14 @@ body{
     line-height: 27px;
 }
 
-.navigation ul{
+.headerpane ul{
     display: inline-flex;
     list-style-type: none;
     line-height: 10%;
     padding-right: 2%;
 }
 
-.navigation input{
+.headerpane input{
     color: gray ;
     font-size  : 13px;
     text-align: center;
