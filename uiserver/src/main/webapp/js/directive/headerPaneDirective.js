@@ -1,10 +1,10 @@
 (function() {
-    angular.module('myapp', [])
+    angular.module('mehar', [])
         .directive('headerpane', function () {
             return {
                 restrict : 'E',
-                templateUrl: './js/template/headerPaneTemplate.html'
-                //controller: '../controller/headerPaneController'
+                templateUrl: './js/template/headerPaneTemplate.html',
+                controller: 'headerPaneController'
             };
         });
 })();
