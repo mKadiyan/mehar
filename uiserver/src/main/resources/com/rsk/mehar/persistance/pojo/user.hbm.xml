@@ -14,7 +14,6 @@
 		
 		<property name="enabled" column="ENABLED" type="boolean" />
 		<property name="admin" column="ADMIN" type="boolean" />
-		<property name="dob" column="DOB" type="date" />
 		<property name="doj" column="DOJ" type="date" />
 	</class>
 </hibernate-mapping>
