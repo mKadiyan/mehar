@@ -5,6 +5,7 @@ subprojects {
     apply plugin: 'java'
 	apply plugin: 'eclipse'
 	apply plugin: 'idea'
+	apply plugin: 'findbugs'
 		
 	repositories 
 	{
@@ -20,4 +21,8 @@ subprojects {
         testCompile 'junit:junit:4.11'
         testCompile 'org.hamcrest:hamcrest-library:1.3'
 	}
+
+	tasks.withType(FindBugs){
+    ignoreFailures = true
+}
 }
