@@ -50,7 +50,7 @@ subprojects {
 	tasks.withType(FindBugs){
 		ignoreFailures = true
 	}
+	
+	
 }
-
-
 

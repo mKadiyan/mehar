@@ -1,0 +1,49 @@
+sourceSets {
+    integTest {
+        java.srcDir file('src/integTest/java')
+        resources.srcDir file('src/integTest/resources')
+    }
+    
+}
+
+task integTest(type: Test) {
+    testClassesDir = sourceSets.integTest.output.classesDir
+    classpath = sourceSets.integTest.runtimeClasspath
+    forkEvery = 1
+}
+
+def createRootIntegTestTasks(Project proj) {
+    if(proj.parent != null) {
+        def parentTask = proj.parent.tasks.findByPath("integTest");
+        if(parentTask == null){
+            parentTask = proj.parent.tasks.create(name: 'integTest')
+        }
+        parentTask.dependsOn integTest
+        if(proj.parent.parent != null) {
+            createRootIntegTestTasks(proj.parent.parent)
+        }
+    }
+}
+
+createRootIntegTestTasks(project)
+dependencies {
+
+    integTestCompile sourceSets.main.output
+    integTestCompile configurations.testCompile
+    integTestCompile sourceSets.test.output
+    integTestRuntime configurations.testRuntime
+
+}
+
+task integTestJar(type: Jar) {
+    from sourceSets.integTest.output
+    classifier = 'integTest'
+}
+
+integTest {
+    testLogging {
+    	events "started", "skipped", "failed"
+    	displayGranularity = 1
+        exceptionFormat = 'full'
+    }
+}
