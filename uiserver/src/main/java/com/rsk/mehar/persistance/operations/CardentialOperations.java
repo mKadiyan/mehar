@@ -97,7 +97,9 @@ public class CardentialOperations
         Query q = session.createQuery("select count(*) from Cardential where email = :emailId AND password = :password");
         q.setParameter("emailId", emailId);
         q.setParameter("password", password);
+
         Long uniqueResult = (Long) q.uniqueResult();
+        logger.warn("checkCardential uniqueResult= "+uniqueResult);
         if (uniqueResult != null && uniqueResult > 0l)
             return true;
         return false;

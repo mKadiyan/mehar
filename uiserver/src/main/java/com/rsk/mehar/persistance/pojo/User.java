@@ -16,8 +16,8 @@ public class User
     
     private Date dob;
     private Date doj;
-    private boolean enabled = true;
-    private boolean admin = false;
+    private Boolean enabled = true;
+    private Boolean admin = false;
     
     public User()
     {
@@ -88,9 +88,9 @@ public class User
         return enabled;
     }
     
-    public void setEnabled(boolean enabled)
+    public void setEnabled(Boolean enabled)
     {
-        this.enabled = enabled;
+        this.enabled = enabled!=null?enabled:false;
     }
     
     public boolean isAdmin()
@@ -98,9 +98,9 @@ public class User
         return admin;
     }
     
-    public void setAdmin(boolean admin)
+    public void setAdmin(Boolean admin)
     {
-        this.admin = admin;
+        this.admin = admin !=null?admin:false;
     }
     
     @Override
