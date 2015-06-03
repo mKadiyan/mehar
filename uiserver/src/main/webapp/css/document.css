@@ -16,11 +16,22 @@ body{
     padding-right: 2%;
 }
 
-.headerpane input{
+.headerpane input {
     color: gray ;
     font-size  : 13px;
     text-align: center;
     -webkit-border-radius: 7px 7px 7px 7px;
     border-radius: 7px 7px 7px 7px;
 
+}
+
+.headerpane button {
+    color: gray ;
+    font-size  : 13px;
+    text-align: center;
+}
+.headerpane label {
+    color: blue ;
+    font-size  : 13px;
+    text-align: center;
 }

@@ -14,6 +14,6 @@
 		<!-- List of XML mapping files -->
 
 		<mapping resource="com/rsk/mehar/persistance/pojo/user.hbm.xml" />
-		<mapping resource="com/rsk/mehar/persistance/pojo/cardential.hbm.xml" />
+
 	</session-factory>
 </hibernate-configuration>

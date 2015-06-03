@@ -2,7 +2,7 @@
     <nav class="headerpane">
         <ul>
             <li ng-show="login"><label>Welcome &nbsp;</label></li>
-            <li ng-show="login"><label>{{userName}} </label></li>
+            <li ng-show="login"><label>{{userName}}&nbsp; </label></li>
             <li ng-hide="login"><input type="text" placeholder="Username" class="uname" ng-model="loginId"/></li>
             <li ng-hide="login"><input type="password" placeholder="Password" class="pword" ng-model="Password"/></li>
             <li ng-hide="login"><button type="button" ng-click="doLogin()">&nbsp;Sign In&nbsp;</button></li>

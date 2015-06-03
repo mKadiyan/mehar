@@ -1,11 +1,7 @@
 package com.rsk.mehar.helper;
 
-import com.rsk.mehar.persistance.exception.InvalidCardentialException;
-import com.rsk.mehar.persistance.exception.InvalidUserException;
 import com.rsk.mehar.persistance.operations.AllOperation;
-import com.rsk.mehar.persistance.operations.CardentialOperations;
 import com.rsk.mehar.persistance.pojo.User;
-import com.rsk.mehar.persistance.util.HibernateUtil;
 import org.apache.log4j.Logger;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -38,11 +34,10 @@ public class LoginHandler {
             LOGGER.warn("password is : "+password);
             if(operations.isValidCardentials(email,password))
             {
-                System.err.print("success");
                 jsonResponse.put(STATUS,"true");
                 jsonResponse.put(MESSAGE, "success");
                 User user = operations.getUser(email);
-                jsonResponse.put(USER_NAME_KEY, user !=null?user.getFirstName()+" "+user.getLastName():"");
+                jsonResponse.put(USER_NAME_KEY, user !=null?user.getName():"");
             }
             else
             {

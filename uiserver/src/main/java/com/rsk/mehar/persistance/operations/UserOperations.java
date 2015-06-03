@@ -80,15 +80,7 @@ public class UserOperations
         }
     }
     
-    private boolean checkIfUserExist(Session session, String emailId)
-    {
-        Query q = session.createQuery("select count(*) from User where email = :emailId");
-        q.setParameter("emailId", emailId);
-        Long uniqueResult = (Long) q.uniqueResult();
-        if (uniqueResult == null || uniqueResult == 0)
-            return false;
-        return true;
-    }
+
     
     public void deleteUser(String emailId) throws InvalidUserException
     {
@@ -115,7 +107,52 @@ public class UserOperations
         }
         
     }
-    
+
+    public boolean isUserExist(String emailId) {
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        Query query = session.createQuery("delete User where email = :emailId");
+        query.setParameter("emailId", emailId);
+        try
+        {
+            return checkIfUserExist(session,emailId);
+        }
+        finally
+        {
+            session.getTransaction().commit();
+            session.close();
+        }
+    }
+
+    public boolean isValidCardentials(String emailId, String password) {
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        Query query = session.createQuery("select count(*) from User where email = :emailId AND password = :password");
+        query.setParameter("emailId", emailId);
+        query.setParameter("password", password);
+        try
+        {
+            Long uniqueResult = (Long) query.uniqueResult();
+            if (uniqueResult == null || uniqueResult == 0)
+                return false;
+        }
+        finally
+        {
+            session.getTransaction().commit();
+            session.close();
+        }
+        return true;
+    }
+
+    private boolean checkIfUserExist(Session session, String emailId)
+    {
+        Query q = session.createQuery("select count(*) from User where email = :emailId");
+        q.setParameter("emailId", emailId);
+        Long uniqueResult = (Long) q.uniqueResult();
+        if (uniqueResult == null || uniqueResult == 0)
+            return false;
+        return true;
+    }
 }
 
 /*

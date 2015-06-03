@@ -8,12 +8,12 @@
 			This class contains the user cardential details.
 		</meta>
 		<id name="email" column="EMAIL" type="string" />
-		<property name="firstName" column="FIRST_NAME" type="string" />
-		<property name="lastName" column="LAST_NAME" type="string" />
-
-		
-		<property name="enabled" column="ENABLED" type="boolean" />
+		<property name="name" column="NAME" type="string" />
+		<property name="password" column="password" type="string"
+				  not-null="true" />
+		<property name="country" column="COUNTRY" type="string" />
 		<property name="admin" column="ADMIN" type="boolean" />
 		<property name="doj" column="DOJ" type="date" />
+		<property name="lastChange" column="date_of_change" type="date" />
 	</class>
 </hibernate-mapping>

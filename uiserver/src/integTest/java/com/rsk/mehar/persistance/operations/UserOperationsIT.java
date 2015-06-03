@@ -33,7 +33,7 @@ public class UserOperationsIT extends TestBase
     @Test
     public void storeAUser_userGetStored() throws InvalidUserException, DuplicateUserException
     {
-        User user = new User(emailId, "Mehar", "Singh", Calendar.getInstance().getTime(), Calendar.getInstance().getTime());
+        User user = new User(emailId, "Mehar", "password", "country", false, Calendar.getInstance().getTime(), Calendar.getInstance().getTime());
         userOperations.storeUser(user);
         tempUsers.add(emailId);
         User user2 = userOperations.getUser(emailId);
@@ -44,7 +44,7 @@ public class UserOperationsIT extends TestBase
     @Test(expected = DuplicateUserException.class)
     public void storeAUserTwice_shouldGetDuplicateUserException() throws DuplicateUserException
     {
-        User user = new User(emailId, "Mehar", "Singh", Calendar.getInstance().getTime(), Calendar.getInstance().getTime());
+        User user = new User(emailId, "Mehar", "password", "country", false, Calendar.getInstance().getTime(), Calendar.getInstance().getTime());
         userOperations.storeUser(user);
         tempUsers.add(emailId);
         userOperations.storeUser(user);
