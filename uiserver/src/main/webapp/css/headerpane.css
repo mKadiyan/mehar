@@ -1,6 +1,3 @@
-body{
-    font-family: Droid+Serif,sans-serif;
-}
 .headerpane{
     background: #7cb8ff;
     width: 100%;
@@ -25,13 +22,3 @@ body{
 
 }
 
-.headerpane button {
-    color: gray ;
-    font-size  : 13px;
-    text-align: center;
-}
-.headerpane label {
-    color: blue ;
-    font-size  : 13px;
-    text-align: center;
-}
