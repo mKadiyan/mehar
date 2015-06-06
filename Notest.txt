@@ -1,0 +1,2 @@
+-- add npm and karma test functionality
+-- Add search and filter for list of topic (left span) and forum  .. order by filtering
