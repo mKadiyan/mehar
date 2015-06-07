@@ -23,11 +23,12 @@ war {
             tasks.npm.execute();
         } else {
             println "it's not Windows"
-            def proc  = "npm install".execute();
-            proc.waitFor();
-            println "return code: ${ proc.exitValue()}"
-            println "stderr: ${proc.err.text}"
-            println "stdout: ${proc.in.text}"
+//            def proc  = "npm install".execute();
+//            proc.waitFor();
+//            println "return code: ${ proc.exitValue()}"
+//            println "stderr: ${proc.err.text}"
+//            println "stdout: ${proc.in.text}"
+             tasks.npmLinux.execute();
         }
 
 	}
@@ -38,6 +39,14 @@ task npm(type: Exec) {
     group = "Build"
     description = "Installs all Node.js dependencies defined in package.json"
     commandLine = ["npm.cmd", "install"]
+    inputs.file "package.json"
+    outputs.dir "node_modules"
+}
+
+task npmLinux(type: Exec) {
+    group = "Build"
+    description = "Installs all Node.js dependencies defined in package.json"
+    commandLine = ["npm", "install"]
     inputs.file "package.json"
     outputs.dir "node_modules"
 }
