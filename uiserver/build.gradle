@@ -15,7 +15,7 @@ dependencies {
 	//compile "javax.servlet:servlet-api:2.5"
 }
 
-build {
+war {
 
 	doFirst {
         if (System.properties['os.name'].toLowerCase().contains('windows')) {
@@ -23,6 +23,11 @@ build {
             tasks.npm.execute();
         } else {
             println "it's not Windows"
+            def proc  = "npm install".execute();
+            proc.waitFor();
+            println "return code: ${ proc.exitValue()}"
+            println "stderr: ${proc.err.text}"
+            println "stdout: ${proc.in.text}"
         }
 
 	}
