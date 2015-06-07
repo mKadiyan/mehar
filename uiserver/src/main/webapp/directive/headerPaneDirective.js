@@ -3,7 +3,7 @@
         .directive('headerpane', function () {
             return {
                 restrict : 'E',
-                templateUrl: './js/template/headerPaneTemplate.html',
+                templateUrl: './template/headerPaneTemplate.html',
                 controller: 'headerPaneController'
             };
         });

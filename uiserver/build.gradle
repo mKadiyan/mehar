@@ -14,3 +14,27 @@ dependencies {
 	compile 'com.googlecode.json-simple:json-simple:1.1'
 	//compile "javax.servlet:servlet-api:2.5"
 }
+
+build {
+
+	doFirst {
+        if (System.properties['os.name'].toLowerCase().contains('windows')) {
+            println "it's Windows"
+            tasks.npm.execute();
+        } else {
+            println "it's not Windows"
+        }
+
+	}
+
+	}
+
+task npm(type: Exec) {
+    group = "Build"
+    description = "Installs all Node.js dependencies defined in package.json"
+    commandLine = ["npm.cmd", "install"]
+    inputs.file "package.json"
+    outputs.dir "node_modules"
+}
+
+
