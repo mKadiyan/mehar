@@ -2,10 +2,12 @@
         <ul class="list-inline pull-right">
             <li ng-show="login" class="label">Welcome &nbsp;</li>
             <li ng-show="login"><label>{{userName}}&nbsp; </label></li>
+
             <li ng-hide="login"><input type="text" placeholder="email@abc.com" class="uname" ng-model="loginId"/></li>
             <li ng-hide="login"><input type="password" placeholder="Password" class="pword" ng-model="Password"/></li>
-            <li ng-hide="login"><button type="button" class="btn  btn-success btn-sm" ng-click="doLogin()">&nbsp;Sign In&nbsp;</button></li>
-            <li ng-hide="login"><button type="button" class="btn  btn-primary btn-sm" ng-click="doRegistration()">&nbsp;Register&nbsp;</button></li>
-            <li ng-show="login"><button type="button" class="btn  btn-warning btn-sm" ng-click="doLogout()">&nbsp;Logout&nbsp;</button></li>
+
+            <li ng-hide="login"><button type="button" class="btn  btn-success btn-sm" ng-click="doLogin()"><span class="glyphicon glyphicon-log-in"/> Login&nbsp;</button></li>
+            <li ng-hide="login"><button type="button" class="btn  btn-primary btn-sm" ng-click="doRegistration()"><span class="glyphicon glyphicon-user"/> Sign Up</button></li>
+            <li ng-show="login"><button type="button" class="btn  btn-warning btn-sm" ng-click="doLogout()"><span class="glyphicon glyphicon-log-out"/> Logout</button></li>
         </ul>
 </div>
