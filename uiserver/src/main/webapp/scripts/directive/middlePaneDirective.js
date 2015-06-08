@@ -3,7 +3,7 @@
         .directive('middlepane', function () {
             return {
                 restrict : 'E',
-                templateUrl: './js/template/middlePaneTemplate.html',
+                templateUrl: './templates/middlePaneTemplate.html',
                 controller: 'middlePaneController'
             };
         });

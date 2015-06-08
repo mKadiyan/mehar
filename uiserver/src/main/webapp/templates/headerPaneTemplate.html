@@ -1,7 +1,6 @@
-<div ng-model="login" ng-model="userName" ng-init="login=false">
-    <nav class="headerpane">
-        <ul>
-            <li ng-show="login"><label>Welcome &nbsp;</label></li>
+<div class="row" ng-model="login" ng-model="userName" ng-init="login=false">
+        <ul class="list-inline pull-right">
+            <li ng-show="login" class="label">Welcome &nbsp;</li>
             <li ng-show="login"><label>{{userName}}&nbsp; </label></li>
             <li ng-hide="login"><input type="text" placeholder="Username" class="uname" ng-model="loginId"/></li>
             <li ng-hide="login"><input type="password" placeholder="Password" class="pword" ng-model="Password"/></li>
@@ -9,5 +8,4 @@
             <li ng-hide="login"><button type="button" ng-click="doRegistration()">&nbsp;Register&nbsp;</button></li>
             <li ng-show="login"><button type="button" ng-click="doLogout()">&nbsp;Logout&nbsp;</button></li>
         </ul>
-    </nav>
 </div>

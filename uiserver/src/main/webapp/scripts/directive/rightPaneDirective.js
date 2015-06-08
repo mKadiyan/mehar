@@ -3,7 +3,7 @@
         .directive('rightpane', function () {
             return {
                 restrict : 'E',
-                templateUrl: './js/template/rightPaneTemplate.html',
+                templateUrl: './templates/rightPaneTemplate.html',
                 controller: 'rightPaneController'
             };
         });

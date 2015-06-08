@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="lib/angular/angular.js"></script>
-
-    <script src="directive/headerPaneDirective.js"></script>
-    <script src="controller/headerPaneController.js"></script>
-
-    <link href='css/main.css' rel='stylesheet' type='text/css'>
+    <script src="scripts/directive/headerPaneDirective.js"></script>
+    <script src="scripts/controller/headerPaneController.js"></script>
+    <script src="scripts/directive/topPaneDirective.js"></script>
+    <script src="scripts/controller/topPaneController.js"></script>
+    <script src="scripts/directive/leftPaneDirective.js"></script>
+    <script src="scripts/controller/leftPaneController.js"></script>
+    <script src="scripts/directive/middlePaneDirective.js"></script>
+    <script src="scripts/controller/middlePaneController.js"></script>
+    <script src="scripts/directive/rightPaneDirective.js"></script>
+    <script src="scripts/controller/rightPaneController.js"></script>
+    <script src="scripts/directive/footerPaneDirective.js"></script>
+    <script src="scripts/controller/footerPaneController.js"></script>
+    <link rel="stylesheet" href="style/main.css">
 </head>
 
-<body ng-app="mehar">
+<body class="container-fluid" ng-app="mehar">
     <headerpane></headerpane>
+    <toppane></toppane>
+    <div class="row">
+        <leftpane></leftpane>
+        <middlepane></middlepane>
+        <rightpane></rightpane>
+    </div>
+    <footerpane></footerpane>
 
 </body>
 
