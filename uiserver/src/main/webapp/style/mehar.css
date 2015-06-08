@@ -11,6 +11,11 @@ headerpane > div >ul
     margin-bottom: 2px;
 }
 
+toppane > div > p
+{
+    background-color: #5cb85c;
+}
+
 .modal-header, h4, .close
 {
             background-color: #5cb85c;
