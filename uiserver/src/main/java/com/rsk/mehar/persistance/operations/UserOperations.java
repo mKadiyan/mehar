@@ -80,8 +80,6 @@ public class UserOperations
         }
     }
     
-
-    
     public void deleteUser(String emailId) throws InvalidUserException
     {
         Session session = sessionFactory.openSession();
@@ -107,15 +105,16 @@ public class UserOperations
         }
         
     }
-
-    public boolean isUserExist(String emailId) {
+    
+    public boolean isUserExist(String emailId)
+    {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         Query query = session.createQuery("delete User where email = :emailId");
         query.setParameter("emailId", emailId);
         try
         {
-            return checkIfUserExist(session,emailId);
+            return checkIfUserExist(session, emailId);
         }
         finally
         {
@@ -123,8 +122,9 @@ public class UserOperations
             session.close();
         }
     }
-
-    public boolean isValidCardentials(String emailId, String password) {
+    
+    public boolean isValidCardentials(String emailId, String password)
+    {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         Query query = session.createQuery("select count(*) from User where email = :emailId AND password = :password");
@@ -143,7 +143,7 @@ public class UserOperations
         }
         return true;
     }
-
+    
     private boolean checkIfUserExist(Session session, String emailId)
     {
         Query q = session.createQuery("select count(*) from User where email = :emailId");

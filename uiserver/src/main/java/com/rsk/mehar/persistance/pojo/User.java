@@ -17,12 +17,14 @@ public class User
     private boolean admin;
     private Date doj;
     private Date lastChange;
-
+    
     public User()
     {
-
+        
     }
-    public User(String email, String name, String password, String country, boolean admin, Date doj, Date lastChange) {
+    
+    public User(String email, String name, String password, String country, boolean admin, Date doj, Date lastChange)
+    {
         this.email = email;
         this.name = name;
         this.password = password;
@@ -31,60 +33,74 @@ public class User
         this.doj = doj;
         this.lastChange = lastChange;
     }
-
-    public String getEmail() {
+    
+    public String getEmail()
+    {
         return email;
     }
-
-    public void setEmail(String email) {
+    
+    public void setEmail(String email)
+    {
         this.email = email;
     }
-
-    public String getName() {
+    
+    public String getName()
+    {
         return name;
     }
-
-    public void setName(String name) {
+    
+    public void setName(String name)
+    {
         this.name = name;
     }
-
-    public String getPassword() {
+    
+    public String getPassword()
+    {
         return password;
     }
-
-    public void setPassword(String password) {
+    
+    public void setPassword(String password)
+    {
         this.password = password;
     }
-
-    public String getCountry() {
+    
+    public String getCountry()
+    {
         return country;
     }
-
-    public void setCountry(String country) {
+    
+    public void setCountry(String country)
+    {
         this.country = country;
     }
-
-    public boolean isAdmin() {
+    
+    public boolean isAdmin()
+    {
         return admin;
     }
-
-    public void setAdmin(boolean admin) {
+    
+    public void setAdmin(boolean admin)
+    {
         this.admin = admin;
     }
-
-    public Date getDoj() {
+    
+    public Date getDoj()
+    {
         return doj;
     }
-
-    public void setDoj(Date doj) {
+    
+    public void setDoj(Date doj)
+    {
         this.doj = doj;
     }
-
-    public Date getLastChange() {
+    
+    public Date getLastChange()
+    {
         return lastChange;
     }
-
-    public void setLastChange(Date lastChange) {
+    
+    public void setLastChange(Date lastChange)
+    {
         this.lastChange = lastChange;
     }
 }

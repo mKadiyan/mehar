@@ -20,7 +20,7 @@ public class MyServlet extends HttpServlet
     private static final long serialVersionUID = 1L;
     
     private static final Logger LOGGER = Logger.getLogger(MyServlet.class);
-
+    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
@@ -28,14 +28,14 @@ public class MyServlet extends HttpServlet
         // super.doGet(req, resp);
         // resp.sendRedirect("./index.html");
     }
-
+    
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
         LOGGER.info("in doPost");
         super.doPost(req, resp);
     }
-
+    
     @Override
     public void init() throws ServletException
     {
