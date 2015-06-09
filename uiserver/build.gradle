@@ -3,16 +3,16 @@ apply plugin: 'application'
 apply plugin: 'war'
 apply plugin: 'jetty'
 dependencies {
-	compile "org.eclipse.jetty:jetty-server:$jetty9Version"
-	compile "org.eclipse.jetty:jetty-servlet:$jetty9Version"
-	compile "org.eclipse.jetty:jetty-webapp:$jetty9Version"
-	compile "org.eclipse.jetty:jetty-servlets:$jetty9Version"
-	compile "org.eclipse.jetty:jetty-jsp:$jetty9Version"
-	compile "javax.servlet:jstl:1.2"
+	//compile "org.eclipse.jetty:jetty-server:$jetty9Version"
+	//compile "org.eclipse.jetty:jetty-servlet:$jetty9Version"
+	//compile "org.eclipse.jetty:jetty-webapp:$jetty9Version"
+	//compile "org.eclipse.jetty:jetty-servlets:$jetty9Version"
+	//compile "org.eclipse.jetty:jetty-jsp:$jetty9Version"
+	//compile "javax.servlet:jstl:1.2"
 	compile "org.hibernate:hibernate-core:4.3.10.Final"
 	compile "mysql:mysql-connector-java:5.1.6"
 	compile 'com.googlecode.json-simple:json-simple:1.1'
-	//compile "javax.servlet:servlet-api:2.5"
+	compile "javax.servlet:servlet-api:2.5"
 }
 
 war {
