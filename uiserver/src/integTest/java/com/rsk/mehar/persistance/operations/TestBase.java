@@ -17,6 +17,12 @@ import org.junit.BeforeClass;
 
 import com.rsk.mehar.persistance.util.HibernateUtil;
 
+/**
+ * Integration Test base class
+ * 
+ * @author ravinder
+ *
+ */
 public class TestBase
 {
     protected final String emailId = "_test@gmail.com";

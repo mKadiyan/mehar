@@ -8,6 +8,12 @@ package com.rsk.mehar.persistance.pojo;
 
 import java.util.Date;
 
+/**
+ * Hibernate POJO class for User
+ * 
+ * @author ravinder
+ *
+ */
 public class User
 {
     private String email;

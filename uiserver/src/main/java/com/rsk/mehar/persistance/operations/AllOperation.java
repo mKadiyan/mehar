@@ -12,8 +12,7 @@ import com.rsk.mehar.persistance.util.HibernateUtil;
  */
 public class AllOperation
 {
-    
-    UserOperations userOperations;
+    private UserOperations userOperations;
     private static Logger logger = Logger.getLogger(UserOperations.class);
     
     public AllOperation()

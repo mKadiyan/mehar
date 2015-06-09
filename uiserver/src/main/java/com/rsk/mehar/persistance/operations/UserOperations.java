@@ -17,6 +17,12 @@ import com.rsk.mehar.persistance.exception.DuplicateUserException;
 import com.rsk.mehar.persistance.exception.InvalidUserException;
 import com.rsk.mehar.persistance.pojo.User;
 
+/**
+ * User Operations
+ * 
+ * @author ravinder
+ *
+ */
 public class UserOperations
 {
     private static Logger logger = Logger.getLogger(UserOperations.class);

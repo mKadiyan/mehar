@@ -6,6 +6,12 @@
 
 package com.rsk.mehar.persistance.exception;
 
+/**
+ * Duplicate User Exception
+ * 
+ * @author ravinder
+ *
+ */
 public class DuplicateUserException extends Exception
 {
     

@@ -6,6 +6,12 @@
 
 package com.rsk.mehar.persistance.exception;
 
+/**
+ * Invalid User Exception
+ * 
+ * @author ravinder
+ *
+ */
 public class InvalidUserException extends Exception
 {
     private static final long serialVersionUID = 7539251413783999831L;
